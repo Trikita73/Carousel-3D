@@ -125,6 +125,12 @@ body, html {
 	color: var(--accent);
 }
 
+.showcase_carousel__item { 
+	position: relative;
+	height: calc(100vh - var(--padding)*2);
+	text-align: center;
+}
+
 /* Animation */
 
 @keyframes k-light {
