@@ -126,6 +126,14 @@ body, html {
 	color: var(--accent);
 }
 
+
+/* Carousel */
+
+.showcase_carousel .swiper-wrapper {
+	transition: var(--transition);
+}
+
+
 .showcase_carousel__item { 
 	position: relative;
 	height: calc(100vh - var(--padding)*2);
@@ -195,6 +203,57 @@ body, html {
 .showcase_carousel__image-right .showcase_carousel__image {
 	animation: k-right-side 2s ease-in-out infinite;
 	animation-direction: alternate 
+}
+
+/*Navigation*/
+
+.showcase_navigation {
+	overflow: hidden;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.showcase_navigation > * {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	outline: none;
+	cursor: pointer;
+}
+
+.showcase_navigation__next { 
+	right: 0;
+
+}
+
+.showcase_navigation > *::before {
+	content: '?';
+	font-family: assassin-st;
+	opacity: 0;
+	transition: opacity .75s ease-out;
+	position: absolute;
+	transform: rotate(-90deg);
+	left: 50px;
+	top: 50%;
+	font-size: 44px;
+}
+
+.showcase_navigation > *:hover::before {
+	opacity: .25;
+}
+
+.showcase_navigation__next::before { 
+	transform: rotate(90deg);
+	right: 50px;
+	left: auto;
+}
+
+.showcase_navigation > *.swiper-button-disabled {
+	display: none;
 }
 
 /* Animation */
